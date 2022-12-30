@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @rajendar38
+- 👋 Hi, I’m @rajendar.talatam
 - 👀 I’m interested in cloud native technologies
 - 🌱 I’m currently learning observability and devops monitoring tools
 - 💞️ I’m looking to collaborate on kubernetes and docker 
