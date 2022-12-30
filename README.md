@@ -1,15 +1,15 @@
 <h1 align="center">Hi, I'm  Rajendar Talatam</h1>
 <h3 align="center">A passionate Devops Engineer </h3>
 
-- 📫 How to reach me ** rajendar(https://keybase.io/erdemozgen)** or **m.erdemozgen@protonmail.com**
+- 📫 How to reach me ** rajendar.talata@gmail.com**
 
-- 📄 Know about my experiences [https://www.linkedin.com/in/mozgen/](https://www.linkedin.com/in/mozgen/)
+- 📄 Know about my experiences [https://www.linkedin.com/in/rajendar/](https://www.linkedin.com/in/rajendar/)
 
 
 <div align="center">
-<p><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=erdemozgen&exclude_repo=MachineLearningArchive&langs_count=6&theme=radical&show_icons=true&locale=en&layout=compact&line_height=24)" alt="erdemozgen" /></p>
+<p><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=rajendar38&exclude_repo=MachineLearningArchive&langs_count=6&theme=radical&show_icons=true&locale=en&layout=compact&line_height=24)" alt="rajendar38" /></p>
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=erdemozgen&count_private=true&show_icons=true&theme=radical&locale=en&line_height=24") alt="erdemozgen" /></p>
+<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=rajendar38&count_private=true&show_icons=true&theme=radical&locale=en&line_height=24") alt="rajendar38" /></p>
 </div>
 
 
@@ -20,5 +20,5 @@
 	
 # Working on
 <div align="center">
-<a href="https://github.com/rajendar38/St2-HA-Helm"><img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=Go-Learning-Land&repo=Go-Learning-Archive&show_owner=true&theme=radical" alt="erdemozgen" /></a>
+<a href="https://github.com/rajendar38/St2-HA-Helm"><img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=Go-Learning-Land&repo=Go-Learning-Archive&show_owner=true&theme=radical" alt="rajendar38" /></a>
 </div>
