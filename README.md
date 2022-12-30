@@ -7,7 +7,7 @@
 
 
 <div align="center">
-<p><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=rajendar38&exclude_repo=MachineLearningArchive&langs_count=6&theme=radical&show_icons=true&locale=en&layout=compact&line_height=24)" alt="rajendar38" /></p>
+<p><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=rajendar38&langs_count=6&theme=radical&show_icons=true&locale=en&layout=compact&line_height=24)" alt="rajendar38" /></p>
 
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=rajendar38&count_private=true&show_icons=true&theme=radical&locale=en&line_height=24") alt="rajendar38" /></p>
 </div>
