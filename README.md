@@ -1,7 +1,7 @@
 <h1 align="center">Hi, I'm  Rajendar Talatam</h1>
 <h3 align="center">A passionate Devops Engineer </h3>
 
-- 📫 How to reach me ** rajendar.talata@gmail.com**
+- 📫 How to reach me ** rajendar.talatam@gmail.com**
 
 - 📄 Know about my experiences [https://www.linkedin.com/in/rajendar/](https://www.linkedin.com/in/rajendar/)
 
