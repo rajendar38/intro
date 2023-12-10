@@ -20,5 +20,5 @@
 	
 # Working on
 <div align="center">
-<a href="https://github.com/rajendar38/docs-6tops"><img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=rajendar38&repo=St2-HA-Helm&show_owner=true&theme=radical" alt="rajendar38" /></a>
+<a href="https://github.com/rajendar38/docs-6tops"><img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=rajendar38&repo=docs-6tops&show_owner=true&theme=radical" alt="rajendar38" /></a>
 </div>
