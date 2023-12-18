@@ -20,5 +20,5 @@
 	
 # Working on
 <div align="center">
-<a href="https://github.com/OPENAIA"><img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=rajendar38&repo=OPENAIA&show_owner=true&theme=radical" alt="rajendar38" /></a>
+<a href="https://github.com/openaia/6tops"><img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=rajendar38&repo=6TOPS&show_owner=true&theme=radical" alt="rajendar38" /></a>
 </div>
