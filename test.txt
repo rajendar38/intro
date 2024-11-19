@@ -1,0 +1,106 @@
+from kubernetes import client, config
+from kubernetes.client.rest import ApiException
+
+def check_running_pods(namespace, deployment_name):
+    """
+    Check if there are any running pods for a given deployment.
+    """
+    try:
+        # Load Kubernetes configuration
+        config.load_kube_config()
+
+        # Create an instance of the CoreV1Api
+        core_v1 = client.CoreV1Api()
+
+        # Fetch pods based on the deployment's label selector
+        label_selector = f"app={deployment_name}"  # Adjust this label selector to match your deployment's labels
+        pods = core_v1.list_namespaced_pod(namespace=namespace, label_selector=label_selector)
+
+        # Check if any pod is in the "Running" phase
+        running_pods = [pod for pod in pods.items if pod.status.phase == "Running"]
+        if running_pods:
+            print(f"Found {len(running_pods)} running pods for deployment '{deployment_name}'.")
+            return True
+        else:
+            print(f"No running pods found for deployment '{deployment_name}'.")
+            return False
+    except ApiException as e:
+        print(f"Error checking pod status: {e}")
+        return False
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+        return False
+
+def add_secret_volume_to_deployment(deployment_name, namespace, secret_name, mount_path):
+    try:
+        # Ensure there are running pods before patching the deployment
+        if not check_running_pods(namespace, deployment_name):
+            print("No running pods available. Aborting deployment patch.")
+            return
+
+        # Load Kubernetes configuration
+        config.load_kube_config()
+
+        # Define API instances for interacting with the cluster
+        apps_v1 = client.AppsV1Api()
+
+        # Fetch the current deployment
+        try:
+            deployment = apps_v1.read_namespaced_deployment(name=deployment_name, namespace=namespace)
+        except ApiException as e:
+            if e.status == 404:
+                print(f"Error: Deployment '{deployment_name}' not found in namespace '{namespace}'.")
+                return
+            else:
+                print(f"Error fetching deployment: {e}")
+                return
+
+        # Define the volume with the secret
+        secret_volume = client.V1Volume(
+            name=secret_name,
+            secret=client.V1SecretVolumeSource(secret_name=secret_name)
+        )
+
+        # Define the volume mount
+        volume_mount = client.V1VolumeMount(
+            name=secret_name,
+            mount_path=mount_path,
+            read_only=True  # Set to True if you don't want to modify the secret files
+        )
+
+        # Add the volume to the deployment spec
+        if deployment.spec.template.spec.volumes is None:
+            deployment.spec.template.spec.volumes = []
+        deployment.spec.template.spec.volumes.append(secret_volume)
+
+        # Add the volume mount to the first container
+        if deployment.spec.template.spec.containers[0].volume_mounts is None:
+            deployment.spec.template.spec.containers[0].volume_mounts = []
+        deployment.spec.template.spec.containers[0].volume_mounts.append(volume_mount)
+
+        # Apply the updated deployment configuration
+        try:
+            apps_v1.patch_namespaced_deployment(
+                name=deployment_name,
+                namespace=namespace,
+                body=deployment
+            )
+            print(f"Secret '{secret_name}' added as volume and mounted at '{mount_path}' in deployment '{deployment_name}'.")
+        except ApiException as e:
+            print(f"Error updating deployment: {e}")
+            return
+
+    except FileNotFoundError:
+        print("Error: Kubernetes configuration file not found.")
+    except client.exceptions.ConfigException:
+        print("Error: Could not configure Kubernetes client. Check your kubeconfig.")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+
+# Example usage
+add_secret_volume_to_deployment(
+    deployment_name="my-deployment",
+    namespace="default",
+    secret_name="my-secret",
+    mount_path="/etc/secret"
+)
